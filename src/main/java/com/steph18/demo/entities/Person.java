@@ -1,4 +1,4 @@
-package entities;
+package com.steph18.demo.entities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,9 +31,9 @@ public class Person extends BasicEntity {
     private String email;
 
     @OneToOne
-    private String User;
+    private User User;
 
-    @OneToMany(mappedBy = "assignedUser", cascade = { CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE })
+    @OneToMany(mappedBy = "person", cascade = { CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE })
     private List<Task> tasks = new ArrayList<>();
 
 }

@@ -1,9 +1,9 @@
-package entities;
+package com.steph18.demo.entities;
 
 import java.time.LocalDateTime;
 
-import enums.TaskPriority;
-import enums.TaskStatus;
+import com.steph18.demo.enums.TaskPriority;
+import com.steph18.demo.enums.TaskStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

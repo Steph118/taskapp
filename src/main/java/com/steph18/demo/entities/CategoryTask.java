@@ -1,4 +1,4 @@
-package entities;
+package com.steph18.demo.entities;
 
 import java.util.ArrayList;
 import java.util.List;
