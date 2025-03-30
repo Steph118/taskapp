@@ -1,13 +1,29 @@
 package com.steph18.demo.serviceimpl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
+
+import com.steph18.demo.entities.Person;
 import com.steph18.demo.repository.PersonRepository;
 import com.steph18.demo.service.PersonService;
 
 @Service
-public class PersonServiceImpl implements PersonService {
+public class PersonServiceImpl extends GenericServiceImpl<Person,Long>
+        implements PersonService {
 
-    @Autowired
-    private PersonRepository personRepository;
+    private final PersonRepository repository;
+
+    public PersonServiceImpl(PersonRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public JpaRepository<Person, Long> getRepository() {
+        return this.repository;
+    }
+
+    @Override
+    public Long getId(Person p) {
+        return p.getId();
+    }
 }
