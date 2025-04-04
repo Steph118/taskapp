@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:replace="/pages/layouts/layout-edit::layoutEdit(
+      editForm=~{this::#add-cat},
+      titleLayout='edition',
+      contentTitle='Édition'
+      )">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="add-cat">
+    <form method="post">
+        <div class="row card-style">
+            <h6 class="mb-25">
+               Catégorie de tâches
+            </h6>
+            <div class="input-style-1 col-12 col-md-6 col-lg-6">
+                <label>Libellé</label>
+                <input placeholder="Le libellé" type="text"/>
+            </div>
+            <div class="input-style-2 col-12 col-md-6 col-lg-6">
+                <label>Description</label>
+                <input placeholder="La description" type="text"/>
+            </div>
+
+        </div>
+        <div class="row card-body">
+            <ul class="buttons-group">
+                <li>
+                    <button class="btn success-btn-outline  btn success-btn" type="submit">
+                        <i class="lni lni-save"></i>
+                        Enregister
+                    </button>
+                </li>
+                <li>
+                    <button class="btn danger-btn-outline btn danger-btn" type="submit">
+                        <i class="lni lni-close"></i>
+                        Annuler
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:fragment="layoutList"
+      th:replace="pages/layouts/layout.html :: layout(
+        contentLayout=~{::section},
+        contentTitle=${contentTitle}
+        )">
+
+<body>
+<section>
+    <div class="form-elements-wrapper"
+         th:insert="${listForm}">
+    </div>
+</section>
+</body>
+</html>

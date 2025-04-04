@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "category_tasks")
@@ -19,11 +20,31 @@ public class CategoryTask extends BasicEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String label;
 
     private String description;
 
 
     @OneToMany(mappedBy = "category", cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE})
     private List<Task> tasks = new ArrayList<>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof CategoryTask that)) return false;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "CategoryTask{" +
+                "id=" + id +
+                ", libelle='" + label + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

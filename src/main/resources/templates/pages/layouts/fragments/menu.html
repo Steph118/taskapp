@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <body>
-
-
 <aside class="sidebar-nav-wrapper" id="menu-layout">
     <div class="navbar-logo">
-        <a href="index.html">
+        <a th:href="@{/index}">
             <img alt="logo" th:src="@{/assets/images/logo/logo.svg}"/>
         </a>
     </div>
@@ -32,7 +30,7 @@
                 </a>
                 <ul class="collapse show dropdown-nav" id="ddmenu_1">
                     <li>
-                        <a class="active" th:href="@{/}"> eCommerce </a>
+                        <a class="active" th:href="@{/index}"> Accueil </a>
                     </li>
                 </ul>
             </li>
@@ -58,14 +56,20 @@
                 </a>
                 <ul class="collapse dropdown-nav" id="ddmenu_2">
                     <li>
-                        <a href="settings.html"> Settings </a>
+                        <a th:href="@{/task-app/pages/category-tasks/list}"> Catégories tâches </a>
                     </li>
                     <li>
-                        <a href="blank-page.html"> Blank Page </a>
+                        <a href="blank-page.html"> Tâches </a>
+                    </li>
+                    <li>
+                        <a href="blank-page.html"> Personnes </a>
+                    </li>
+                    <li>
+                        <a href="blank-page.html"> Utilisateurs </a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a href="invoice.html">
               <span class="icon">
                 <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -75,8 +79,8 @@
               </span>
                     <span class="text">Invoice</span>
                 </a>
-            </li>
-            <li class="nav-item nav-item-has-children">
+            </li>-->
+            <!--<li class="nav-item nav-item-has-children">
                 <a
                         aria-controls="ddmenu_3"
                         aria-expanded="false"
@@ -104,8 +108,8 @@
                         <a href="signup.html"> Sign Up </a>
                     </li>
                 </ul>
-            </li>
-            <span class="divider"><hr/></span>
+            </li>-->
+            <!--<span class="divider"><hr/></span>
             <li class="nav-item nav-item-has-children">
                 <a
                         aria-controls="ddmenu_4"
@@ -237,10 +241,10 @@
               </span>
                     <span class="text">Notifications</span>
                 </a>
-            </li>
+            </li>-->
         </ul>
     </nav>
-    <div class="promo-box">
+    <!--<div class="promo-box">
         <div class="promo-icon">
             <img alt="Logo" class="mx-auto" th:src="@{/assets/images/logo/logo-icon-big.svg}">
         </div>
@@ -249,7 +253,7 @@
         <a class="main-btn primary-btn btn-hover" href="https://plainadmin.com/pro" rel="nofollow" target="_blank">
             Upgrade to PRO
         </a>
-    </div>
+    </div>-->
 </aside>
 </body>
 </html>

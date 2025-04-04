@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="pages/layouts/layout.html :: layout(
-titleTayout='Accueil',
-contentLayout=~{::section}
-)">
-
+<html lang="en"
+      th:fragment="layoutEdit"
+      th:replace="/pages/layouts/layout.html :: layout(
+      contentLayout=~{::section},
+      contentTitle=${contentTitle}
+      )">
 <body>
 <section>
-    <form method="post" th:action="@{/layout/edit}">
-        <div class="row ">
-
-        </div>
-    </form>
+    <div class="form-elements-wrapper"
+         th:insert="${editForm}">
+    </div>
 </section>
 </body>
 </html>

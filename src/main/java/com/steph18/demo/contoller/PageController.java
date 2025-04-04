@@ -15,4 +15,14 @@ public class PageController {
     public String showPageLayoutEdit() {
         return "pages/layouts/layout-edit";
     }
+
+    @GetMapping("/task-app/pages/category-tasks/edit")
+    public String showPageCategoryTaskEdit() {
+        return "pages/task-app/category-tasks/edit";
+    }
+
+    @GetMapping("/task-app/pages/category-tasks/list")
+    public String showPageCategoryTaskList() {
+        return "pages/task-app/category-tasks/list";
+    }
 }
