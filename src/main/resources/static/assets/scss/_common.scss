@@ -39,6 +39,7 @@ button:focus,
 a:hover {
   color: $primary;
 }
+
 button,
 a {
   @include transition(0.3s);
@@ -207,6 +208,7 @@ p {
         border-radius: 4px;
         color: $dark;
       }
+
       i {
         font-weight: 700;
       }
@@ -218,15 +220,19 @@ p {
 .radius-4 {
   border-radius: 4px;
 }
+
 .radius-10 {
   border-radius: 10px;
 }
+
 .radius-30 {
   border-radius: 30px;
 }
+
 .radius-50 {
   border-radius: 50px;
 }
+
 .radius-full {
   border-radius: 50%;
 }

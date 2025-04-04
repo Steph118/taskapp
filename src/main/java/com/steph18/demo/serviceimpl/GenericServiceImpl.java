@@ -1,14 +1,15 @@
 package com.steph18.demo.serviceimpl;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public abstract class GenericServiceImpl<T, I>  {
+import java.util.List;
+import java.util.Optional;
+
+public abstract class GenericServiceImpl<T, I> {
 
     protected ModelMapper modelMapper = new ModelMapper();
+
     public abstract JpaRepository<T, I> getRepository();
 
     public abstract I getId(T t);
@@ -16,9 +17,11 @@ public abstract class GenericServiceImpl<T, I>  {
     public T save(T t) {
         return this.getRepository().save(t);
     }
+
     public void saveAndFlush(T t) {
         this.getRepository().saveAndFlush(t);
     }
+
     public void saveAll(List<T> tList) {
         this.getRepository().saveAll(tList);
     }
@@ -31,9 +34,11 @@ public abstract class GenericServiceImpl<T, I>  {
         Optional<T> opt = this.getRepository().findById(this.getId(t));
         return opt.orElse(null);
     }
+
     public void getReferenceById(T t) {
         this.getRepository().getReferenceById(getId(t));
     }
+
     public void delete(T t) {
         this.getRepository().delete(t);
     }

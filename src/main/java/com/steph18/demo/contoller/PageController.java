@@ -10,4 +10,9 @@ public class PageController {
     public String showPageIndex() {
         return "index";
     }
+
+    @GetMapping("/pages/layouts/edit")
+    public String showPageLayoutEdit() {
+        return "pages/layouts/layout-edit";
+    }
 }

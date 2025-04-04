@@ -38,6 +38,7 @@
         width: 100%;
       }
     }
+
     .shape-image {
       position: absolute;
       z-index: -1;
@@ -62,9 +63,11 @@
   @media #{$xs} {
     padding: 30px;
   }
+
   .form-wrapper {
     width: 100%;
   }
+
   .singin-option {
     button {
       font-size: 16px;

@@ -44,6 +44,7 @@
         background: rgba($light, 0.5);
       }
     }
+
     &.light-bg {
       &[type="date"]:focus,
       &[type="time"]:focus {
@@ -211,6 +212,7 @@
       &.light-bg {
         background: rgba($light, 0.5);
       }
+
       &.light-bg:focus {
         background: $white;
       }
@@ -232,6 +234,7 @@
       &::after {
         margin-top: -8px;
       }
+
       &::before {
         margin-top: 0;
       }
@@ -293,6 +296,7 @@
       &.light-bg {
         background: rgba($light, 0.5);
       }
+
       &.light-bg:focus {
         background: $white;
       }
@@ -401,17 +405,19 @@
     margin-top: 6px;
 
     &:checked {
-        background-color: $primary;
-        border-color: $primary;
-      }
+      background-color: $primary;
+      border-color: $primary;
+    }
 
     &:disabled {
       cursor: auto;
     }
   }
+
   .form-check-input:disabled ~ label {
     cursor: auto;
   }
+
   label {
     margin-top: 6px;
     cursor: pointer;
@@ -426,6 +432,7 @@
       }
     }
   }
+
   &.checkbox-warning {
     .form-check-input {
       &:checked {
@@ -434,6 +441,7 @@
       }
     }
   }
+
   &.checkbox-danger {
     .form-check-input {
       &:checked {
@@ -461,9 +469,11 @@
       cursor: auto;
     }
   }
+
   .form-check-input:disabled ~ label {
     cursor: auto;
   }
+
   label {
     margin-top: 6px;
     cursor: pointer;
@@ -478,6 +488,7 @@
       }
     }
   }
+
   &.radio-warning {
     .form-check-input {
       &:checked {
@@ -486,6 +497,7 @@
       }
     }
   }
+
   &.radio-danger {
     .form-check-input {
       &:checked {

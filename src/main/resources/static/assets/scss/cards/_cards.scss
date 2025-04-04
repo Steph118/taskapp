@@ -49,6 +49,7 @@
       }
     }
   }
+
   .card-image {
     border-radius: 10px;
     margin-bottom: 25px;
@@ -329,6 +330,7 @@
       }
     }
   }
+
   .card-action {
     display: flex;
 
@@ -400,7 +402,7 @@
 
     .card-content {
       margin-top: 18px;
-      
+
     }
   }
 
@@ -448,40 +450,48 @@
       background: rgba($purple, 0.1);
       color: $purple;
     }
+
     &.success {
       background: rgba($success, 0.1);
       color: $success;
     }
+
     &.primary {
       background: rgba($primary, 0.1);
       color: $primary;
     }
+
     &.orange {
       background: rgba($orange, 0.1);
       color: $orange;
     }
-      &.blue-light {
-        background: rgba($blue-light, 0.08);
-        color: $blue-light;
-      }
+
+    &.blue-light {
+      background: rgba($blue-light, 0.08);
+      color: $blue-light;
+    }
 
     &.opacity-100 {
       &.purple {
         background: $purple;
         color: $white;
       }
+
       &.success {
         background: $success;
         color: $white;
       }
+
       &.primary {
         background: $primary;
         color: $white;
       }
+
       &.orange {
         background: $orange;
         color: $white;
       }
+
       &.deep-blue {
         background: $deep-blue;
         color: $white;

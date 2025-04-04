@@ -36,6 +36,7 @@
             background: $white;
           }
         }
+
         button {
           position: absolute;
           border: none;
@@ -113,9 +114,11 @@
             background: #f3f3f3;
           }
         }
+
         &:last-child {
           border-bottom: none;
         }
+
         a {
           padding: 8px 12px;
           display: flex;
@@ -144,6 +147,7 @@
               font-weight: 600;
               line-height: 1;
             }
+
             p {
               font-size: 14px;
               color: $black-70;
@@ -290,6 +294,7 @@
 
       .profile-info {
         margin: 0 5px;
+
         .info {
           display: flex;
           align-items: center;

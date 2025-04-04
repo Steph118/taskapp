@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="pages/layouts/layout.html :: layout(
+titleTayout='Accueil',
+contentLayout=~{::section}
+)">
+
+<body>
+<section>
+    <form method="post" th:action="@{/layout/edit}">
+        <div class="row ">
+
+        </div>
+    </form>
+</section>
+</body>
+</html>

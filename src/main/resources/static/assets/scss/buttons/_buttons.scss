@@ -41,32 +41,32 @@
 
   &.square-btn {
     .main-btn {
-    &:first-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
+      &:first-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
 
-    &:last-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+      &:last-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
   }
 
   &.rounded-full {
     .main-btn {
-    &:first-child {
-      border-top-left-radius: 30px;
-      border-bottom-left-radius: 30px;
-    }
+      &:first-child {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
 
-    &:last-child {
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-    }
+      &:last-child {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+      }
     }
   }
-  
+
   .main-btn {
     border-radius: 0;
 
@@ -84,7 +84,7 @@
       border-right: 1px solid $light-3;
     }
   }
-  
+
 }
 
 .btn-sm {
@@ -156,6 +156,7 @@
     color: $white;
   }
 }
+
 .primary-btn-outline {
   background: transparent;
   color: $primary;
@@ -166,6 +167,7 @@
     background: $primary;
   }
 }
+
 .primary-btn-light {
   background: rgba($primary, 0.12);
   color: $primary;
@@ -174,6 +176,7 @@
     color: $primary;
   }
 }
+
 .primary-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -196,6 +199,7 @@
     color: $white;
   }
 }
+
 .secondary-btn-outline {
   background: transparent;
   color: $secondary;
@@ -206,6 +210,7 @@
     background: $secondary;
   }
 }
+
 .secondary-btn-light {
   background: rgba($secondary, 0.12);
   color: $secondary;
@@ -214,6 +219,7 @@
     color: $secondary;
   }
 }
+
 .secondary-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -236,6 +242,7 @@
     color: $white;
   }
 }
+
 .success-btn-outline {
   background: transparent;
   color: $success;
@@ -246,6 +253,7 @@
     background: $success;
   }
 }
+
 .success-btn-light {
   background: rgba($success, 0.12);
   color: $success;
@@ -254,6 +262,7 @@
     color: $success;
   }
 }
+
 .success-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -276,6 +285,7 @@
     color: $white;
   }
 }
+
 .danger-btn-outline {
   background: transparent;
   color: $danger;
@@ -286,6 +296,7 @@
     background: $danger;
   }
 }
+
 .danger-btn-light {
   background: rgba($danger, 0.12);
   color: $danger;
@@ -294,6 +305,7 @@
     color: $danger;
   }
 }
+
 .danger-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -316,6 +328,7 @@
     color: $white;
   }
 }
+
 .warning-btn-outline {
   background: transparent;
   color: $warning;
@@ -326,6 +339,7 @@
     background: $warning;
   }
 }
+
 .warning-btn-light {
   background: rgba($warning, 0.12);
   color: $warning;
@@ -334,6 +348,7 @@
     color: $warning;
   }
 }
+
 .warning-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -356,6 +371,7 @@
     color: $white;
   }
 }
+
 .info-btn-outline {
   background: transparent;
   color: $info;
@@ -366,6 +382,7 @@
     background: $info;
   }
 }
+
 .info-btn-light {
   background: rgba($info, 0.12);
   color: $info;
@@ -374,6 +391,7 @@
     color: $info;
   }
 }
+
 .info-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -396,6 +414,7 @@
     color: $white;
   }
 }
+
 .dark-btn-outline {
   background: transparent;
   color: $dark;
@@ -406,6 +425,7 @@
     background: $dark;
   }
 }
+
 .dark-btn-light {
   background: rgba($dark, 0.12);
   color: $dark;
@@ -414,6 +434,7 @@
     color: $dark;
   }
 }
+
 .dark-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -436,6 +457,7 @@
     color: $dark;
   }
 }
+
 .light-btn-outline {
   background: transparent;
   color: $dark;
@@ -446,6 +468,7 @@
     background: $light-3;
   }
 }
+
 .light-btn-light {
   background: rgba($light-3, 0.50);
   color: $dark;
@@ -454,6 +477,7 @@
     color: $dark;
   }
 }
+
 .light-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -476,6 +500,7 @@
     color: $white;
   }
 }
+
 .active-btn-outline {
   background: transparent;
   color: $active;
@@ -486,6 +511,7 @@
     background: $active;
   }
 }
+
 .active-btn-light {
   background: rgba($active, 0.12);
   color: $active;
@@ -494,6 +520,7 @@
     color: $active;
   }
 }
+
 .active-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -516,6 +543,7 @@
     color: $gray-3;
   }
 }
+
 .deactive-btn-outline {
   background: transparent;
   color: $gray-3;
@@ -526,6 +554,7 @@
     background: $deactive;
   }
 }
+
 .deactive-btn-light {
   background: rgba($deactive, 1);
   color: $gray-3;
@@ -534,6 +563,7 @@
     color: $gray-3;
   }
 }
+
 .deactive-btn-group {
   background: transparent;
   border: 1px solid transparent;
@@ -556,6 +586,7 @@
 .rounded-md {
   border-radius: 10px;
 }
+
 /* =========  rounded-full ========= */
 .rounded-full {
   border-radius: 30px;
@@ -583,34 +614,42 @@
     color: $white;
     background: rgba($primary, 1);
   }
+
   &.active-btn {
     color: $primary;
     background: rgba($primary, 0.1);
   }
+
   &.close-btn {
     color: $danger;
     background: rgba($danger, 0.1);
   }
+
   &.warning-btn {
     color: $warning;
     background: rgba($warning, 0.1);
   }
+
   &.info-btn {
     color: $info;
     background: rgba($info, 0.1);
   }
+
   &.success-btn {
     color: $success;
     background: rgba($success, 0.1);
   }
+
   &.secondary-btn {
     color: $secondary;
     background: rgba($secondary, 0.1);
   }
+
   &.dark-btn {
     color: $dark;
     background: rgba($dark, 0.1);
   }
+
   &.orange-btn {
     color: $orange;
     background: rgba($orange, 0.1);

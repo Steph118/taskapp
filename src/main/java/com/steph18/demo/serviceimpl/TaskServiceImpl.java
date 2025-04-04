@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TaskServiceImpl extends GenericServiceImpl<Task,Long>
+public class TaskServiceImpl extends GenericServiceImpl<Task, Long>
         implements TaskService {
 
     private final TaskRepository repository;

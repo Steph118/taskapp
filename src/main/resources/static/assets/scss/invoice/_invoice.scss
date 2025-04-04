@@ -33,6 +33,7 @@
       @media #{$xs} {
         margin-top: 30px;
       }
+
       p {
         font-size: 14px;
         font-weight: 400;
@@ -95,15 +96,19 @@
   td {
     padding: 10px 8px;
   }
+
   .service {
     min-width: 150px;
   }
+
   .desc {
     min-width: 150px;
   }
+
   .qty {
     min-width: 150px;
   }
+
   .amount {
     min-width: 100px;
   }

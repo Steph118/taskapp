@@ -5,6 +5,7 @@
     height: 250px !important;
   }
 }
+
 .legend3 {
   li {
     margin-right: 25px;
@@ -29,6 +30,7 @@
         top: 5px;
       }
     }
+
     .text {
       margin-left: 10px;
 
@@ -111,16 +113,19 @@
           background: $success;
         }
       }
+
       &.primary {
         &::before {
           background: $primary;
         }
       }
+
       &.orange {
         &::before {
           background: $orange;
         }
       }
+
       &.danger {
         &::before {
           background: $danger;
@@ -163,11 +168,11 @@
 .card-top-chanels {
   .top-chanels-item {
     display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     padding: 11px 0;
 
     @media #{$lg, $md, $xs} {
-      grid-template-columns: repeat(3,minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }
@@ -205,6 +210,7 @@
       background: rgba(240, 149, 12, 0.08);
       color: #F0950C;
     }
+
     &.sent {
       background: rgba(16, 185, 129, 0.08);
       color: #10B981;

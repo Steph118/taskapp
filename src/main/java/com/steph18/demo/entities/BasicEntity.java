@@ -1,10 +1,9 @@
-
 package com.steph18.demo.entities;
-
-import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
+
+import java.io.Serializable;
 
 @MappedSuperclass
 public class BasicEntity implements Serializable {
