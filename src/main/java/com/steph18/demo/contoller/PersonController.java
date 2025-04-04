@@ -1,5 +1,7 @@
 package com.steph18.demo.contoller;
 
-//@Controller
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class PersonController {
 }

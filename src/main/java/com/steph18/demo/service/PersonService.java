@@ -1,4 +1,6 @@
 package com.steph18.demo.service;
 
-public interface PersonService {
+import com.steph18.demo.entities.Person;
+
+public interface PersonService extends GenericService<Person, Long> {
 }

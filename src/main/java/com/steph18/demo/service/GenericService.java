@@ -3,6 +3,8 @@ package com.steph18.demo.service;
 import java.util.List;
 
 public interface GenericService<T, I> {
+    List<T> findAll();
+
     T save(T t);
 
     void saveAndFlush(T t);
@@ -11,7 +13,7 @@ public interface GenericService<T, I> {
 
     void saveAllAndFlush(List<T> tList);
 
-    T findById(T t);
+    T findById(I i);
 
     void getReferenceById(T t);
 
@@ -20,4 +22,8 @@ public interface GenericService<T, I> {
     void deleteById(T t);
 
     void deleteAll(T t);
+
+    T update(T t);
+
+    boolean existsById(T t);
 }

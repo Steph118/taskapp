@@ -1,4 +1,6 @@
 package com.steph18.demo.service;
 
-public interface TaskService {
+import com.steph18.demo.entities.Task;
+
+public interface TaskService extends GenericService<Task, Long> {
 }

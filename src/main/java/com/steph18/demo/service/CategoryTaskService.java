@@ -1,4 +1,7 @@
 package com.steph18.demo.service;
 
-public interface CategoryTaskService {
+import com.steph18.demo.entities.CategoryTask;
+
+public interface CategoryTaskService extends
+        GenericService<CategoryTask, Long> {
 }
