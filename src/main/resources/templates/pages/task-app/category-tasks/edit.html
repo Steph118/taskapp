@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"
-      th:replace="/pages/layouts/layout-edit::layoutEdit(
+      th:replace="~{/pages/layouts/layout-edit ::
+      layoutEdit(
       editForm=~{this::#add-cat},
       titleLayout='edition',
       contentTitle='Édition'
-      )">
+      )}">
 
 <head>
     <meta charset="UTF-8">
@@ -12,24 +13,26 @@
 </head>
 <body>
 <div id="add-cat">
-    <form class="needs-validation" method="post">
+    <form class="needs-validation" method="post" th:action="@{/save/category-tasks}" th:object="${category}">
         <div class="row card-style">
             <h6 class="mb-25">
                 Catégorie de tâches
             </h6>
             <div class="input-style-1 col-12 col-md-6 col-lg-6">
                 <label class="form-label" for="libelle">Libellé</label>
-                <input id="libelle" placeholder="Le libellé" required type="text"/>
+                <input id="libelle" placeholder="Le libellé" required th:field="*{label}" type="text"/>
+                <span th:errors="*{label}" th:if="${#fields.hasErrors('label')}"></span>
                 <div class="invalid-feedback">
-                    Le libellé est obligatoire
-                </div>
-                <div class="valid-feedback">
-                    ok
+                    Le libellé est obligatoire.
                 </div>
             </div>
             <div class="input-style-2 col-12 col-md-6 col-lg-6">
-                <label>Description</label>
-                <input placeholder="La description" type="text"/>
+                <label class="form-label" for="description">Description</label>
+                <input id="description" placeholder="La description" required th:field="*{description}" type="text"/>
+                <span th:errors="*{description}" th:if="${#fields.hasErrors('description')}"></span>
+                <div class="invalid-feedback">
+                    La description est obligatoire.
+                </div>
             </div>
 
         </div>

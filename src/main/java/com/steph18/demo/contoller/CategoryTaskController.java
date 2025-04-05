@@ -1,9 +1,10 @@
 package com.steph18.demo.contoller;
 
 import com.steph18.demo.entities.CategoryTask;
-import com.steph18.demo.entities.User;
 import com.steph18.demo.service.CategoryTaskService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CategoryTaskController {
 
     private final CategoryTaskService categoryTaskService;
+    private Logger logger = LoggerFactory.getLogger(CategoryTaskController.class);
 
     @Autowired
     public CategoryTaskController(CategoryTaskService categoryTaskService) {
@@ -25,37 +27,37 @@ public class CategoryTaskController {
 
     @GetMapping("/task-app/pages/category-tasks/list")
     public String showPageCategoryTaskList(Model model) {
-        model.addAttribute("users", categoryTaskService.findAll());
+        model.addAttribute("categories", categoryTaskService.findAll());
         return "pages/task-app/category-tasks/list";
     }
 
-
-    /*@PostMapping({"/task-app/pages/category-tasks/edit/"})
-    public String updateUser(@PathVariable(required = false) Long id, @Valid CategoryTask categoryTask,
-                             BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("category", categoryTask);
-            return "pages/task-app/category-tasks/edit";
-        }
-        this.categoryTaskService.update(categoryTask);
-        return "redirect:/users"; // Redirige vers la liste des utilisateurs si tout va bien
-    }*/
-
-    @GetMapping({"/task-app/pages/category-tasks/edit", "/{id}"})
-    public String userForm(@PathVariable(required = false) Long id, Model model) {
-        CategoryTask catNew = (id != null) ? categoryTaskService.findById(id) : new CategoryTask();
-        model.addAttribute("category", catNew);
+    @GetMapping("/task-app/pages/category-tasks/edit")
+    public String addNewCategoryTaskForm(Model model) {
+        model.addAttribute("category", new CategoryTask());
         return "pages/task-app/category-tasks/edit";
     }
 
-    // Enregistrer ou mettre à jour un utilisateur
-    @PostMapping({"/task-app/pages/category-tasks/edit", "/{id}"})
-    public String saveUser(@PathVariable(required = false) Long id, @ModelAttribute CategoryTask category) {
-        if (id != null) {
-            //user.setId(id);
+    @GetMapping("/task-app/pages/category-tasks/edit/{id}")
+    public String updateCategoryTaskForm(@PathVariable Long id, Model model) {
+        CategoryTask catToUpdate = (id != null) ? categoryTaskService.findById(id) : new CategoryTask();
+        model.addAttribute("category", catToUpdate);
+        return "pages/task-app/category-tasks/edit";
+    }
+
+    @PostMapping("/save/category-tasks")
+    public String saveCategoryTask(@ModelAttribute CategoryTask categoryTask,
+                                   BindingResult result) {
+        if (result.hasErrors()) {
+            return "pages/task-app/category-tasks/edit";
         }
-        //userService.saveUser(user);
-        return "redirect:/users";
+        //categoryTask = (CategoryTask) model.getAttribute("category");
+        logger.info("Save category task: " + categoryTask);
+        if (categoryTask.getId() == null) {
+            this.categoryTaskService.save(categoryTask);
+        } else {
+            this.categoryTaskService.update(categoryTask);
+        }
+        return "redirect:/task-app/pages/category-tasks/list";
     }
 
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en"
-      th:replace="/pages/layouts/layout-list::layoutList(
+      th:replace="~{/pages/layouts/layout-list::layoutList(
       listForm=~{this::#add-cat},
       titleLayout='category tasks',
       contentTitle='Catégorie Tâches'
-      )">
+      )}">
 
 <head>
     <meta charset="UTF-8">

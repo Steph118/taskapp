@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"
       th:fragment="layoutList"
-      th:replace="pages/layouts/layout.html :: layout(
+      th:replace="~{
+      pages/layouts/layout.html :: layout(
         contentLayout=~{::section},
         contentTitle=${contentTitle}
-        )">
+        )}">
 
 <body>
 <section>
