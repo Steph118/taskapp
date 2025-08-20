@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CategoryTaskController {
 
     private final CategoryTaskService categoryTaskService;
-    private Logger logger = LoggerFactory.getLogger(CategoryTaskController.class);
+    private final Logger logger = LoggerFactory.getLogger(CategoryTaskController.class);
 
     @Autowired
     public CategoryTaskController(CategoryTaskService categoryTaskService) {
@@ -45,17 +45,18 @@ public class CategoryTaskController {
     }
 
     @PostMapping("/save/category-tasks")
-    public String saveCategoryTask(@ModelAttribute CategoryTask categoryTask,
+    public String saveCategoryTask(@ModelAttribute("category") @Valid CategoryTask categoryTask,
                                    BindingResult result) {
         if (result.hasErrors()) {
             return "pages/task-app/category-tasks/edit";
         }
-        //categoryTask = (CategoryTask) model.getAttribute("category");
-        logger.info("Save category task: " + categoryTask);
+        logger.info("Category task: {}", categoryTask);
         if (categoryTask.getId() == null) {
             this.categoryTaskService.save(categoryTask);
+            logger.info("Save category task");
         } else {
             this.categoryTaskService.update(categoryTask);
+            logger.info("UUpdate category task");
         }
         return "redirect:/task-app/pages/category-tasks/list";
     }

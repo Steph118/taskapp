@@ -6,6 +6,8 @@ import com.steph18.demo.service.UserService;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserServiceImpl extends GenericServiceImpl<User, Long>
         implements UserService {
@@ -25,4 +27,14 @@ public class UserServiceImpl extends GenericServiceImpl<User, Long>
     public Long getId(User t) {
         return t.getId();
     }
+
+    @Override
+    public Optional<User> queryByUsername(String username) {
+        return repository.queryByUsername(username);
+    }
+
+    /*Override
+    public Optional<User> queryByUsername(String username) {
+        return repository.queryByUsername(username);
+    }*/
 }

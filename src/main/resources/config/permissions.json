@@ -1,0 +1,26 @@
+[
+  {
+    "code": "VIEW_POST",
+    "libelle": "Voir les posts"
+  },
+  {
+    "code": "COMMENT_POST",
+    "libelle": "Commenter"
+  },
+  {
+    "code": "CREATE_POST",
+    "libelle": "Créer un post"
+  },
+  {
+    "code": "EDIT_POST",
+    "libelle": "Modifier un post"
+  },
+  {
+    "code": "DELETE_POST",
+    "libelle": "Supprimer un post"
+  },
+  {
+    "code": "VIEW_STATS",
+    "libelle": "Voir les statistiques"
+  }
+]

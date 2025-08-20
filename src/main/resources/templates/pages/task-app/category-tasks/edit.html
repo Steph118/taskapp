@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"
-      th:replace="~{/pages/layouts/layout-edit ::
-      layoutEdit(
-      editForm=~{this::#add-cat},
-      titleLayout='edition',
-      contentTitle='Édition'
-      )}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<body th:replace="~{/pages/layouts/layout-edit ::layoutEdit(
+        editForm=~{::#add-cat},
+        titleLayout='categorie-tache',
+        contentTitle='Édition')}">
 <div id="add-cat">
     <form class="needs-validation" method="post" th:action="@{/save/category-tasks}" th:object="${category}">
         <div class="row card-style">
@@ -21,19 +14,24 @@
             <div class="input-style-1 col-12 col-md-6 col-lg-6">
                 <label class="form-label" for="libelle">Libellé</label>
                 <input id="libelle" placeholder="Le libellé" required th:field="*{label}" type="text"/>
-                <span th:errors="*{label}" th:if="${#fields.hasErrors('label')}"></span>
-                <div class="invalid-feedback">
-                    Le libellé est obligatoire.
-                </div>
+                <small th:errors="*{label}" th:if="${#fields.hasErrors('label')}"
+                      class="text-danger">
+                    Libelle non valide
+                </small>
             </div>
             <div class="input-style-2 col-12 col-md-6 col-lg-6">
                 <label class="form-label" for="description">Description</label>
                 <input id="description" placeholder="La description" required th:field="*{description}" type="text"/>
-                <span th:errors="*{description}" th:if="${#fields.hasErrors('description')}"></span>
-                <div class="invalid-feedback">
-                    La description est obligatoire.
-                </div>
+                <small th:errors="*{description}" th:if="${#fields.hasErrors('description')}"
+                      class="text-danger">
+                    Description non valide
+                </small>
+
             </div>
+
+
+            
+
 
         </div>
         <div class="row card-body">
@@ -45,10 +43,10 @@
                     </button>
                 </li>
                 <li>
-                    <button class="btn danger-btn-outline" type="reset">
+                    <a th:ref="@{/task-app/pages/category-tasks/list}" class="btn danger-btn-outline">
                         <i class="lni lni-close"></i>
                         Annuler
-                    </button>
+                    </a>
                 </li>
             </ul>
         </div>

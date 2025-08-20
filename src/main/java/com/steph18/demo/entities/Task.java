@@ -3,18 +3,20 @@ package com.steph18.demo.entities;
 import com.steph18.demo.enums.TaskPriority;
 import com.steph18.demo.enums.TaskStatus;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
-@Getter
 @NoArgsConstructor
-@Setter
+@AllArgsConstructor
+@Data
+@SuperBuilder
 @Entity
 @Table(name = "tasks")
-public class Task extends BasicEntity {
+public class Task extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +38,9 @@ public class Task extends BasicEntity {
 
     private TaskPriority priority;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "person_id")
-    private Person person;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "person_id")
+//    private Person person;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"
-      th:fragment="layoutEdit"
-      th:replace="~{/pages/layouts/layout.html :: layout(
+      th:fragment="layoutEdit(editForm)">
+<body th:replace="~{/pages/layouts/layout.html :: layout(
       contentLayout=~{::section},
+      titleLayout=${titleLayout},
       contentTitle=${contentTitle}
       )}">
-<body>
 <section>
     <div class="form-elements-wrapper"
          th:insert="${editForm}">

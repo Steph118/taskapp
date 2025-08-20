@@ -1,9 +1,11 @@
 package com.steph18.demo.entities;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,19 +14,18 @@ import java.util.Objects;
 @Entity
 @Table(name = "category_tasks")
 @NoArgsConstructor
-@Getter
-@Setter
-public class CategoryTask extends BasicEntity {
+@AllArgsConstructor
+@Data
+@SuperBuilder
+public class CategoryTask extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @NotBlank(message = "Le libellé est invalide")
     private String label;
-
+    @NotBlank(message = "La description est invalide")
     private String description;
-
-
     @OneToMany(mappedBy = "category", cascade = {CascadeType.REFRESH, CascadeType.PERSIST, CascadeType.MERGE})
     private List<Task> tasks = new ArrayList<>();
 
@@ -32,19 +33,5 @@ public class CategoryTask extends BasicEntity {
     public boolean equals(Object o) {
         if (!(o instanceof CategoryTask that)) return false;
         return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
-
-    @Override
-    public String toString() {
-        return "CategoryTask{" +
-                "id=" + id +
-                ", libelle='" + label + '\'' +
-                ", description='" + description + '\'' +
-                '}';
     }
 }
