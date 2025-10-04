@@ -25,4 +25,6 @@ public class PersonServiceImpl extends GenericServiceImpl<Person, Long>
     public Long getId(Person p) {
         return p.getId();
     }
+
+
 }

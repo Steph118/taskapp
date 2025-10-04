@@ -34,7 +34,7 @@ public abstract class GenericServiceImpl<T, I>
 
     public T findById(I i) {
         Optional<T> opt = this.getRepository().findById(i);
-        return opt.orElse(null);
+        return opt.orElseThrow();
     }
 
     public void getReferenceById(T t) {

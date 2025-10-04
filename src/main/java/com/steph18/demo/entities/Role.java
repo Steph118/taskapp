@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -36,15 +35,21 @@ public class Role extends BaseEntity {
     @ManyToMany(mappedBy = "roles")
     private List<User> users = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,
+            CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(name = "roles_permissions",
             joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "permission_id")
     )
-    private List<Permission> permissions = new LinkedList<>();
+    private List<Permission> permissions = new ArrayList<>();
 
     public void addPermissions(Permission permission) {
-        permissions.add(permission);
+        this.permissions.add(permission);
+    }
+
+    public Role(int version, String label) {
+        super(version);
+        this.label = label;
     }
 
     @Override

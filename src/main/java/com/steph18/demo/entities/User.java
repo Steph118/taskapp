@@ -46,7 +46,8 @@ public class User extends BaseEntity {
 
     private Boolean locked = false;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST,
+            CascadeType.MERGE,CascadeType.REFRESH})
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -61,6 +62,11 @@ public class User extends BaseEntity {
                 .actif(true)
                 .locked(false)
                 .changePassword(true).build();
+    }
+
+    public User addRole(Role role) {
+        roles.add(role);
+        return this;
     }
 
     public User register(String username, String password) {

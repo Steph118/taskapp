@@ -11,7 +11,16 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 public class ResponseObject {
     private int code;
-    private String status;
+    private int status;
     private String message;
-    private String token;
+    private String description;
+    private ResponseData data;
+
+    public ResponseObject buildLogin(String token,Boolean changePassword) {
+        this.data =  ResponseData.builder()
+                .token(token)
+                .changePassword(changePassword)
+                .build();
+        return this;
+    }
 }
